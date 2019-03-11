@@ -6,21 +6,20 @@
 using namespace std;
 
 // ex 2.2. 1 
-// int max(int arr){
-//     int tempMax, arrLen;
+int max(int arr[], int arrLen){
+    int tempMax;
 
-//     arrLen = sizeof(arr)/sizeof(int);
-//     tempMax = arr[0];
+    tempMax = arr[0];
 
-//     for (int i=1; i < arrLen; i++)
-//     {
-//         if (arr[i] > tempMax)
-//         {
-//             tempMax = arr[i];
-//         }
-//     }
-//     return tempMax;
-// }
+    for (int i=1; i < arrLen; i++)
+    {
+        if (arr[i] > tempMax)
+        {
+            tempMax = arr[i];
+        }
+    }
+    return tempMax;
+}
 
 long factorial(long n)
 {
@@ -45,26 +44,23 @@ long Fibonacci(long n)
 
 }
 
-// void meanAndVariance(double arr)
-// {
-//     int n; 
-//     double sum=0, sumsq=0, mean, var;
+void meanAndVariance(double arr[], int len)
+{
+    double sum=0, sumsq=0, mean, var;
 
-//     n = sizeof(arr)/sizeof(double);
+    for (int i=0; i < len; i++)
+    {
+        sum+=arr[i];
+        sumsq+=arr[i]*arr[i];
+    }
 
-//     for (int i=0; i < n; i++)
-//     {
-//         sum+=arr[i];
-//         sumsq+=arr[i]*arr[i];
-//     }
+    mean = sum/len;
+    var = sumsq/len - (mean*mean);
 
-//     mean = sum/n;
-//     var = sumsq/n - (mean*mean);
+    cout << "mean: " << mean << endl;
+    cout << "variance: " << var << endl;
 
-//     cout << "mean: " << mean << endl;
-//     cout << "variance: " << var << endl;
-
-// }
+}
 
 // ex 2.1. 1
 // program that verifies if a number is even or odd
