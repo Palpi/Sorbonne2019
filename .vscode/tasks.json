@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build NumberSystemExercises ",
+            "label": "build all",
             "type": "shell",
-            "command": "g++ -o lect2.exe NumberSystemExercises.cpp",
+            "command": "g++ -o all.exe main.cpp",
             "group": {
                 "kind": "build",
                 "isDefault": true
