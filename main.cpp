@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include "Lecture2.h"
+#include "Lecture3.h"
 
 using namespace std;
 
@@ -8,7 +10,11 @@ int main()
 
     // Lecture 2
     cout << "factorial of 5: " << factorial(5) << endl;
-    cout << "5. element in Fibonacci sequence: " << Fibonacci(5) << endl;
+    for (int i=0; i<100; i++)
+    {
+        cout << (i+1) << ". element in Fibonacci sequence: " << Fibonacci(i+1) << endl;
+    }
+    
     cout << "Is 5 even?" << isEven(5) << endl;
     basicOperations();
     swapAB();
@@ -21,8 +27,16 @@ int main()
     meanAndVariance(egArrDbl, 5);
     // end of Lecture 2
 
+    // Lecture 3
+    int testNr;
+    string ans;
+    cout << "Enter a number to check if it is prime or not" << endl;
+    cin >> testNr;
+    ans = isPrime(testNr) ? " is prime " : " is not prime ";
+    cout << testNr << ans << endl;
 
-
+    quadraticEquation();
+    HeronFormula();
 
 system("pause");
 

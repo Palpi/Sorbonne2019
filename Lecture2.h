@@ -5,63 +5,7 @@
 
 using namespace std;
 
-// ex 2.2. 1 
-int max(int arr[], int arrLen){
-    int tempMax;
-
-    tempMax = arr[0];
-
-    for (int i=1; i < arrLen; i++)
-    {
-        if (arr[i] > tempMax)
-        {
-            tempMax = arr[i];
-        }
-    }
-    return tempMax;
-}
-
-long factorial(long n)
-{
-    return (n ==0 || n==1) ? 1 : factorial(n-1)*n;
-
-}
-
-long Fibonacci(long n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
-    else if (n == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return Fibonacci(n - 2) + Fibonacci(n - 1);
-    }
-
-}
-
-void meanAndVariance(double arr[], int len)
-{
-    double sum=0, sumsq=0, mean, var;
-
-    for (int i=0; i < len; i++)
-    {
-        sum+=arr[i];
-        sumsq+=arr[i]*arr[i];
-    }
-
-    mean = sum/len;
-    var = sumsq/len - (mean*mean);
-
-    cout << "mean: " << mean << endl;
-    cout << "variance: " << var << endl;
-
-}
-
+// 2.1 Introductory exercises
 // ex 2.1. 1
 // program that verifies if a number is even or odd
 bool isEven(int n) {
@@ -102,5 +46,74 @@ void swapAB() {
     cout << "Now A = " << A << endl;
     cout << "And B = " << B << endl;
 }
+
+
+// Excercises from Lecture 1
+// ex 2.2. 1 
+// Program providing the biggest number in the array 
+int max(int arr[], int arrLen){
+    int tempMax;
+
+    tempMax = arr[0];
+
+    for (int i=1; i < arrLen; i++)
+    {
+        if (arr[i] > tempMax)
+        {
+            tempMax = arr[i];
+        }
+    }
+    return tempMax;
+}
+
+// ex 2.2. 2
+// Program providing factorial
+long factorial(long n)
+{
+    return (n ==0 || n==1) ? 1 : factorial(n-1)*n;
+
+}
+
+// ex 2.2. 3
+// Program providing numbers of the Fibonacci sequence
+
+long Fibonacci(long n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    else if (n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return Fibonacci(n - 2) + Fibonacci(n - 1);
+    }
+
+}
+
+// ex 2.2. 4, 5
+// Program providing mean and variance of a sequence of numbers
+
+void meanAndVariance(double arr[], int len)
+{
+    double sum=0, sumsq=0, mean, var;
+
+    for (int i=0; i < len; i++)
+    {
+        sum+=arr[i];
+        sumsq+=arr[i]*arr[i];
+    }
+
+    mean = sum/len;
+    var = sumsq/len - (mean*mean);
+
+    cout << "mean: " << mean << endl;
+    cout << "variance: " << var << endl;
+
+}
+
 
 #endif
