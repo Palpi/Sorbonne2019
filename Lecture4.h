@@ -51,6 +51,35 @@ void generateLCG() {
 
 }
 
+void generateRand() {
+
+    int x1, n = 1000;
+    double mean, stdev, sum=0, sumsq=0, u;
+
+    srand((unsigned) time(0));
+
+    cout << "This program generates " << n << " pseudorandom numbers using standard C++ pseudorandom generator" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        x1 = rand();
+
+        u = (double)x1/RAND_MAX;
+        sum+=u;
+        sumsq+=u*u;
+    }
+
+    mean = (double)sum/n;
+    stdev = (double)sumsq/n - mean*mean;
+    stdev = sqrt(stdev);
+
+    cout << "Mean should be equal to: " << 0.5 << endl;
+    cout << "And pseudorandom mean is equal to: " << mean << endl; 
+    cout << "Standard deviation should be equal to: " << 1/sqrt(12) << endl;
+    cout << "And pseudorandom standard deviation is equal to: " << stdev << endl; 
+
+}
+
 void guessRandom() {
 
     int answer, guess, lBound, uBound;
