@@ -2,6 +2,7 @@
 #include <string>
 #include "Lecture2.h"
 #include "Lecture3.h"
+#include "Lecture4.h"
 
 using namespace std;
 
@@ -36,7 +37,11 @@ int main()
     // cout << testNr << ans << endl;
 
 //    quadraticEquation();
-    HeronFormula();
+ //   HeronFormula();
+
+
+    // Lecture 4
+    generateLCG();
 
 system("pause");
 
