@@ -41,7 +41,8 @@ int main()
 
 
     // Lecture 4
-    generateLCG();
+    // generateLCG();
+    guessRandom();
 
 system("pause");
 

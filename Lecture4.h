@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <cmath>
-
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -47,6 +48,38 @@ void generateLCG() {
     cout << "And pseudorandom mean is equal to: " << mean << endl; 
     cout << "Standard deviation should be equal to: " << 1/sqrt(12) << endl;
     cout << "And pseudorandom standard deviation is equal to: " << stdev << endl; 
+
+}
+
+void guessRandom() {
+
+    int answer, guess, lBound, uBound;
+
+    cout << "Choose lower bound! " << endl;
+    cin >> lBound;
+    cout << "Choose upper bound! " << endl;
+    cin >> uBound;
+
+    if (uBound <= lBound) {
+        cout << "Upper bound should be bigger than lower bound. Run program again." << endl;
+        exit(0);
+    }
+
+    srand((unsigned) time(0)); // use this to change seed
+
+    answer = lBound + rand() % (uBound - lBound + 1); //this will allow to generate uniform dist on the interval
+    guess = uBound + 2;
+
+    while (answer != guess) {
+        cout << "Guess a number!" << endl;
+        cin >> guess;
+        if (answer < guess) {
+            cout << "Less" << endl;
+        } else if (answer > guess) {
+            cout << "More" << endl;
+        }
+    }
+    cout << "Bravo!" << endl;
 
 }
 
