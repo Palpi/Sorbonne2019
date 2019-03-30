@@ -3,6 +3,7 @@
 #include "Lecture2.h"
 #include "Lecture3.h"
 #include "Lecture4.h"
+#include "Lecture5.h"
 
 using namespace std;
 
@@ -46,6 +47,11 @@ int main()
     cout << "Number pi is approximately equal to: " << providePi(1000000) << endl;
     checkBoxMullerFunction();
     // end of Lecture 4
+
+    // Lecture 5
+    bubbleSort();
+    // end of Lecture 5
+
 
 system("pause");
 

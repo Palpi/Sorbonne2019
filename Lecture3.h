@@ -39,12 +39,12 @@ void quadraticEquation()
     if (delta > 0)
     {
         double x1, x2;
-        x1 = (b + sqrt(delta))/(2*a);
-        x2 = (b - sqrt(delta))/(2*a);
+        x1 = (-b + sqrt(delta))/(2*a);
+        x2 = (-b - sqrt(delta))/(2*a);
         cout << "There are two roots: " << x1 << ", " << x2 << endl;
     } else if (delta == 0){
         double x;
-        x = b/(4*a);
+        x = -b/(2*a);
         cout << "There is one root: " << x << endl;
     } else {
         cout << "There are no real roots of this equation." << endl;
