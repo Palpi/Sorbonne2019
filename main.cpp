@@ -5,7 +5,7 @@
 #include "Lecture4.h"
 #include "Lecture5.h"
 #include "Lecture6.h"
-#include "YTM.h"
+#include "Lecture6-YTM.h"
 
 using namespace std;
 
@@ -54,8 +54,9 @@ int main()
     // bubbleSort();
     // // end of Lecture 5
 
-    // writingToFile();
+    // // Lecture 6;
     YTM();
+    probOfDefault();
 
 system("pause");
 
