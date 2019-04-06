@@ -80,6 +80,23 @@ double YTM(){
             cout << "f is equal to: " << ftemp << endl;
             cout << "YTM is equal to:" << r << endl;    
 
+    // SECANT METHOD
+    // starting points
+    r = approximateYTM(c,d,FV,PV,N);
+    rNext = 0.95*r;
+
+    while (abs(f(c,d,FV,PV,N,rNext))> 0.001){
+        temp = rNext;
+        rNext = rNext - (f(c,d,FV,PV,N,rNext)*(rNext - r))/(f(c,d,FV,PV,N,rNext)-f(c,d,FV,PV,N,r));
+        r = temp;
+
+    }
+
+    cout << "objective function: " << f(c,d,FV,PV,N,rNext) << endl;
+    cout << "YTM periodic: " << (rNext * k)*100 << "% ." << endl;
+    cout << "YTM yearly: " << (rNext * k)*100 << "% ." << endl;
+
     return r;
+
 
 }
