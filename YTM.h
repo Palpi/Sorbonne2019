@@ -53,10 +53,32 @@ double YTM(){
             tempYTM = r;
         }
     }
-
+            cout << "GRID SEARCH: " << endl;
             cout << "f is equal to: " << tempMin << endl;
             cout << "YTM is equal to:" << tempYTM << endl;
 
+    // BINARY SEARCH
+
+    double ubound = 1, lbound = 0;
+
+    do {
+        r = lbound + (ubound - lbound)/2;
+        ftemp = f(c,d,FV,PV, N, r);
+
+        if (ftemp < 0)
+        {
+            ubound = r;
+        } 
+        else
+        {
+            lbound = r;
+        }
+
+    } while (abs(ubound-lbound) > 0.001);
+
+            cout << "BINARY SEARCH: " << endl;
+            cout << "f is equal to: " << ftemp << endl;
+            cout << "YTM is equal to:" << r << endl;    
 
     return r;
 
