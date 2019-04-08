@@ -6,6 +6,7 @@
 #include "Lecture5.h"
 #include "Lecture6.h"
 #include "Lecture6-YTM.h"
+#include "Lecture7.h"
 
 using namespace std;
 
@@ -24,7 +25,7 @@ int main()
     // swapAB();
 
     // int egArrInt[5] = {45, 12023, 62, 923, -5}; 
-    // cout << "Max of {45, 12023, 62, 923, -5} is: " << max(egArrInt, 5) << endl;
+    // cout << "Max of {45, 12023, 62, 923, -5} is: " << maximum(egArrInt, 5) << endl;
 
     // double egArrDbl[5] = {45.2, 120, 62.12, 93.3, -5.3}; 
     // cout << "Mean and variance of {45.2, 120, 62.12, 93.3, -5.3} are: " << endl;
@@ -54,9 +55,12 @@ int main()
     // bubbleSort();
     // // end of Lecture 5
 
-    // // Lecture 6;
-    YTM();
-    probOfDefault();
+    // // Lecture 6
+    // YTM();
+    // probOfDefault();
+
+    // // Lecture 7
+    LectureSeven();
 
 system("pause");
 

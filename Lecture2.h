@@ -51,7 +51,7 @@ void swapAB() {
 // Excercises from Lecture 1
 // ex 2.2. 1 
 // Program providing the biggest number in the array 
-int max(int arr[], int arrLen){
+int maximum(int arr[], int arrLen){
     int tempMax;
 
     tempMax = arr[0];
