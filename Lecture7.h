@@ -8,11 +8,8 @@
 #include<sstream>
 #include<limits>
 #include<string>
-#include <cctype>
-#include <iostream>
 
 using namespace std;
-
 
 
 void ExampleSimpleValidation(){
@@ -68,35 +65,58 @@ void ExampleTryCatch(){
     int tempInt, lBound = 0, uBound = 100;
     string tempStr;
 
-    // TO TRZEBA DOPRACOWAĆ
+    try
+    {
+        cout << "enter an integer within the range " << lBound << " to " << uBound << ": ";
+        cin >> tempStr;
 
-    // try
-    // {
-    //     cout << "enter an integer within the range " << lBound << " to " << uBound << ": ";
-    //     cin >> tempStr;
+        tempInt = stoi(tempStr);
 
-    //     if (tempInt < 0 || tempInt > 100)
-    //     {
-    //         throw "tempInt is out of bounds!";
-    //     }
-    // }
-    // catch (runtime_error& e)
-    // {
-    //     cout << "Runtime error" << endl;
-    // }
-    // catch (exception& e)
-    // {
-    //     cout << "Exception: " << e.what() << endl;
-    // }
+        if (tempInt < 0 || tempInt > 100)
+        {
+            throw "the number is outside the range!";
+        }
+    }
+    catch (exception& e)
+    {
+        cout << "Exception: " << e.what() << endl;
+    }
+
+    cout << "END" << endl;
+}
+
+
+void SaveToFile() {
+
+    ofstream textFile;
+    textFile.open ("output.txt");
+    textFile << "The force is strong with you.\n";
+    textFile << "A powerful Sith you will become.\n";
+    textFile << "Henceforth, you shall be known as Darth...Vader.\n";
+    textFile.close();
+
+    char listSeparator=';';
+
+    ofstream csvFile;
+    csvFile.open ("output.csv");
+    csvFile << "col1"<< listSeparator <<"col2"<< listSeparator <<"col3\n";
+    csvFile << "1"<< listSeparator <<"2"<< listSeparator <<"3\n";
+    csvFile << "11"<< listSeparator <<"22"<< listSeparator <<"33.\n";
+    csvFile.close();
+
+    cout << "Files saved!" << endl;
 
 }
 
+
 void LectureSeven()
 {
-    // ExampleSimpleValidation();
-    // ExampleCinIgnore();
-    // ExampleParseFromString();
+    ExampleSimpleValidation();
+    ExampleCinIgnore();
+    ExampleParseFromString();
     ExampleTryCatch();
+
+    SaveToFile();
 }
 
 #endif
