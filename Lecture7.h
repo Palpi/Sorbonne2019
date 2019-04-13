@@ -27,7 +27,6 @@ void ExampleSimpleValidation(){
 void ExampleCinIgnore(){
 
     int tempInt, lBound = 0, uBound = 100;
-    bool cont;
 
     cout << "enter an integer within the range " << lBound << " to " << uBound << ": ";
     
